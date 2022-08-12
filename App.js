@@ -1,17 +1,12 @@
-import {Text, View} from 'react-native';
-import React, {useEffect} from 'react';
-import SplashScreen from 'react-native-splash-screen';
+import React from 'react';
+import UserStack from './routes/UserStack';
+import {NavigationContainer} from '@react-navigation/native';
 
-const App = () => {
-  useEffect(() => {
-    SplashScreen.hide();
-  }, []);
-
+export default function App() {
+  // navigate UserStack page
   return (
-    <View>
-      <Text>Hello</Text>
-    </View>
+    <NavigationContainer>
+      <UserStack />
+    </NavigationContainer>
   );
-};
-
-export default App;
+}
