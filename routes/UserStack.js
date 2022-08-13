@@ -1,8 +1,10 @@
 // Handle non-register user pages
 import React, {useEffect} from 'react';
-import Home from '../screens/user/Home';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import SplashScreen from 'react-native-splash-screen';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import Home from '../screens/user/Home';
+import Camera from '../screens/user/Camera';
+import SearchDoc from '../screens/user/SearchDoc';
 
 const Stack = createNativeStackNavigator();
 // auto hide splash screen
@@ -15,6 +17,8 @@ const UserStack = () => {
     // navigations
     <Stack.Navigator>
       <Stack.Screen name="Home" component={Home} />
+      <Stack.Screen name="Camera" component={Camera} />
+      <Stack.Screen name="SearchDoc" component={SearchDoc} />
     </Stack.Navigator>
   );
 };
