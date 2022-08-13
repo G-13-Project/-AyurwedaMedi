@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, Button} from 'react-native';
+import { View, Text, Button, ImageBackground, SafeAreaView } from "react-native";
 
 const Home = ({navigation}) => {
   const goToCamera = () => {
@@ -9,11 +9,18 @@ const Home = ({navigation}) => {
     navigation.push('SearchDoc');
   };
   return (
-    <View>
-      <Text>Home</Text>
-      <Button title={'go to camera'} onPress={goToCamera} />
-      <Button title={'go to searchDoc'} onPress={goToSearchDoc} />
-    </View>
+    <SafeAreaView style={{flex: 1}}>
+      <ImageBackground
+        source={require('../assets/background.png')}
+        resizeMode="stretch"
+        style={{flex: 1}}>
+        <View>
+          <Text>Camera</Text>
+          <Button title="go to home" onPress={goToCamera} />
+          <Button title="go to searchDoc" onPress={goToSearchDoc} />
+        </View>
+      </ImageBackground>
+    </SafeAreaView>
   );
 };
 
