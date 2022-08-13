@@ -3,7 +3,7 @@ import {View, Text, Button, SafeAreaView, ImageBackground} from 'react-native';
 
 const Camera = ({navigation}) => {
   const goToHome = () => {
-    navigation.push('Home');
+    navigation.push('Pre Medication');
   };
 
   const goToSearchDoc = () => {
