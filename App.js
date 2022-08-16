@@ -1,12 +1,12 @@
 import React from 'react';
-import UserStack from './routes/UserStack';
 import {NavigationContainer} from '@react-navigation/native';
+import MyDrawer from './routes/MyDrawer';
 
 export default function App() {
-  // navigate UserStack page
+  // navigate MyDrawer
   return (
     <NavigationContainer>
-      <UserStack />
+      <MyDrawer />
     </NavigationContainer>
   );
 }

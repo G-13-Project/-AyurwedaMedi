@@ -5,11 +5,22 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import Home from '../screens/user/Home';
 import Camera from '../screens/user/Camera';
 import SearchDoc from '../screens/user/SearchDoc';
-import {Image} from 'react-native';
+import Login from '../screens/user/Login';
 
 const Stack = createNativeStackNavigator();
-// auto hide splash screen
+
+// stack for login direct with Login.js
+const LoginStack = () => {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen name="Login" component={Login} />
+    </Stack.Navigator>
+  );
+};
+
+// stack for main screen connect with other function screens
 const UserStack = () => {
+  // auto hide splash screen
   useEffect(() => {
     SplashScreen.hide();
   }, []);
@@ -30,4 +41,4 @@ const UserStack = () => {
   );
 };
 
-export default UserStack;
+export {UserStack, LoginStack};
