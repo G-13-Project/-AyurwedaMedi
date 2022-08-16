@@ -52,7 +52,7 @@ const UserStack = () => {
 
   return (
     // navigations
-    <Tab.Navigator>
+    <Tab.Navigator screenOptions={{headerShown: false}}>
       <Tab.Screen name="Pre Medication" component={Home} />
       <Tab.Screen name="Camera" component={Camera} />
       <Tab.Screen name="SearchDoc" component={SearchDoc} />
