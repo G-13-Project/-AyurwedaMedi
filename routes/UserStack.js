@@ -6,6 +6,8 @@ import Home from '../screens/user/Home';
 import Camera from '../screens/user/Camera';
 import SearchDoc from '../screens/user/SearchDoc';
 import Login from '../screens/user/Login';
+import Register from '../screens/user/Register';
+import Settings from '../screens/user/Settings';
 
 const Stack = createNativeStackNavigator();
 
@@ -13,7 +15,25 @@ const Stack = createNativeStackNavigator();
 const LoginStack = () => {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="Login" component={Login} />
+      <Stack.Screen name="Log in" component={Login} />
+    </Stack.Navigator>
+  );
+};
+
+// stack for Register direct with Register.js
+const RegStack = () => {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen name="Registration" component={Register} />
+    </Stack.Navigator>
+  );
+};
+
+// stack for Setting direct with Settings.js
+const SettingStack = () => {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen name="Setting" component={Settings} />
     </Stack.Navigator>
   );
 };
@@ -41,4 +61,4 @@ const UserStack = () => {
   );
 };
 
-export {UserStack, LoginStack};
+export {UserStack, LoginStack, RegStack, SettingStack};
