@@ -17,6 +17,12 @@ export const global = StyleSheet.create({
     marginTop: 5,
     color: '#47D50D',
   },
+  titleText: {
+    textAlign: 'center',
+    fontSize: 25,
+    marginTop: 10,
+    color: '#47D50D',
+  },
   logoMini: {
     alignSelf: 'flex-end',
     height: 50,
@@ -25,5 +31,12 @@ export const global = StyleSheet.create({
     marginTop: 5,
     position: 'absolute',
     marginRight: '5%',
+  },
+  tabIcons: {
+    width: 50,
+    height: 50,
+    resizeMode: 'contain',
+    backgroundColor: 'transparent',
+    elevation: 0,
   },
 });

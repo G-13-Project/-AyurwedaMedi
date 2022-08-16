@@ -9,6 +9,8 @@ import Login from '../screens/user/Login';
 import Register from '../screens/user/Register';
 import Settings from '../screens/user/Settings';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import {Image} from 'react-native';
+import {global} from '../styles/global';
 
 // for stack navigation
 const Stack = createNativeStackNavigator();
@@ -19,7 +21,7 @@ const Tab = createBottomTabNavigator();
 // stack for login direct with Login.js
 const LoginStack = () => {
   return (
-    <Stack.Navigator>
+    <Stack.Navigator screenOptions={{headerShown: false}}>
       <Stack.Screen name="Log in" component={Login} />
     </Stack.Navigator>
   );
@@ -28,7 +30,7 @@ const LoginStack = () => {
 // stack for Register direct with Register.js
 const RegStack = () => {
   return (
-    <Stack.Navigator>
+    <Stack.Navigator screenOptions={{headerShown: false}}>
       <Stack.Screen name="Registration" component={Register} />
     </Stack.Navigator>
   );
@@ -37,7 +39,7 @@ const RegStack = () => {
 // stack for Setting direct with Settings.js
 const SettingStack = () => {
   return (
-    <Stack.Navigator>
+    <Stack.Navigator screenOptions={{headerShown: false}}>
       <Stack.Screen name="Setting" component={Settings} />
     </Stack.Navigator>
   );
@@ -52,10 +54,53 @@ const UserStack = () => {
 
   return (
     // navigations
-    <Tab.Navigator screenOptions={{headerShown: false}}>
-      <Tab.Screen name="Pre Medication" component={Home} />
-      <Tab.Screen name="Camera" component={Camera} />
-      <Tab.Screen name="SearchDoc" component={SearchDoc} />
+    <Tab.Navigator
+      screenOptions={{
+        headerShown: false,
+        tabBarShowLabel: false,
+        tabBarStyle: {backgroundColor: 'transparent'},
+      }}>
+      {/*tab navigation for Pre-medication page*/}
+      <Tab.Screen
+        name="Home"
+        component={Home}
+        options={{
+          tabBarIcon: () => (
+            <Image
+              source={require('../screens/assets/home.png')}
+              style={global.tabIcons}
+            />
+          ),
+        }}
+      />
+
+      {/*tab navigation for camera page*/}
+      <Tab.Screen
+        name="Camera"
+        component={Camera}
+        options={{
+          tabBarIcon: () => (
+            <Image
+              source={require('../screens/assets/camera.png')}
+              style={global.tabIcons}
+            />
+          ),
+        }}
+      />
+
+      {/*tab navigation for searchDoc page*/}
+      <Tab.Screen
+        name="SearchDoc"
+        component={SearchDoc}
+        options={{
+          tabBarIcon: () => (
+            <Image
+              source={require('../screens/assets/search.png')}
+              style={global.tabIcons}
+            />
+          ),
+        }}
+      />
     </Tab.Navigator>
   );
 };

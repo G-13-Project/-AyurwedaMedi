@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, ImageBackground, SafeAreaView, Image } from "react-native";
+import {View, Text, ImageBackground, SafeAreaView, Image} from 'react-native';
 import {global} from '../../styles/global';
 
 const SearchDoc = () => {
