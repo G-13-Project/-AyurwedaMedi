@@ -8,8 +8,13 @@ import SearchDoc from '../screens/user/SearchDoc';
 import Login from '../screens/user/Login';
 import Register from '../screens/user/Register';
 import Settings from '../screens/user/Settings';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
+// for stack navigation
 const Stack = createNativeStackNavigator();
+
+// for bottom tab navigation
+const Tab = createBottomTabNavigator();
 
 // stack for login direct with Login.js
 const LoginStack = () => {
@@ -47,17 +52,11 @@ const UserStack = () => {
 
   return (
     // navigations
-    <Stack.Navigator
-      screenOptions={{
-        headerStyle: {
-          backgroundColor: 'white',
-        },
-        headerTintColor: 'lightgreen',
-      }}>
-      <Stack.Screen name="Pre Medication" component={Home} />
-      <Stack.Screen name="Camera" component={Camera} />
-      <Stack.Screen name="SearchDoc" component={SearchDoc} />
-    </Stack.Navigator>
+    <Tab.Navigator>
+      <Tab.Screen name="Pre Medication" component={Home} />
+      <Tab.Screen name="Camera" component={Camera} />
+      <Tab.Screen name="SearchDoc" component={SearchDoc} />
+    </Tab.Navigator>
   );
 };
 

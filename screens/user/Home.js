@@ -1,13 +1,7 @@
 import React from 'react';
-import { View, Text, Button, ImageBackground, SafeAreaView } from "react-native";
+import {View, Text, ImageBackground, SafeAreaView} from 'react-native';
 
-const Home = ({navigation}) => {
-  const goToCamera = () => {
-    navigation.push('Camera');
-  };
-  const goToSearchDoc = () => {
-    navigation.push('SearchDoc');
-  };
+const Home = () => {
   return (
     <SafeAreaView style={{flex: 1}}>
       <ImageBackground
@@ -15,9 +9,7 @@ const Home = ({navigation}) => {
         resizeMode="stretch"
         style={{flex: 1}}>
         <View>
-          <Text>Camera</Text>
-          <Button title="go to home" onPress={goToCamera} />
-          <Button title="go to searchDoc" onPress={goToSearchDoc} />
+          <Text>Home</Text>
         </View>
       </ImageBackground>
     </SafeAreaView>

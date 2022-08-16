@@ -7,7 +7,7 @@ const MyDrawer = () => {
   const Drawer = createDrawerNavigator();
   return (
     <Drawer.Navigator>
-      <Drawer.Screen name="Pre Medication" component={UserStack} />
+      <Drawer.Screen name="User" component={UserStack} />
       <Drawer.Screen name="Login" component={LoginStack} />
       <Drawer.Screen name="Register" component={RegStack} />
       <Drawer.Screen name="Settings" component={SettingStack} />
