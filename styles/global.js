@@ -39,4 +39,22 @@ export const global = StyleSheet.create({
     backgroundColor: 'transparent',
     elevation: 0,
   },
+  preMedi: {
+    alignSelf: 'center',
+    marginTop: 30,
+  },
+  camPageWindow: {
+    marginTop: 30,
+    alignSelf: 'center',
+    width: 320,
+    height: 400,
+  },
+  camPageBtn: {
+    marginTop: 20,
+    alignSelf: 'center',
+  },
+  docPageImg: {
+    marginTop: 50,
+    alignSelf: 'center',
+  },
 });

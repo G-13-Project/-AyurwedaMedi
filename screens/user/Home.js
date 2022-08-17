@@ -16,6 +16,13 @@ const Home = () => {
             style={global.logoMini}
           />
           <Text style={global.headText}>Pre-Medication</Text>
+
+          {/*dumy data*/}
+          <Image
+            source={require('../assets/preMedi.png')}
+            resizeMode="stretch"
+            style={global.preMedi}
+          />
         </View>
       </ImageBackground>
     </SafeAreaView>

@@ -16,6 +16,23 @@ const SearchDoc = () => {
             style={global.logoMini}
           />
           <Text style={global.headText}>Doctors</Text>
+          <Image
+            source={require('../assets/DocInfo.png')}
+            resizeMode="stretch"
+            style={global.docPageImg}
+          />
+
+          {/*dumy data for disply*/}
+          <Image
+            source={require('../assets/DocInfo.png')}
+            resizeMode="stretch"
+            style={global.preMedi}
+          />
+          <Image
+            source={require('../assets/DocInfo.png')}
+            resizeMode="stretch"
+            style={global.preMedi}
+          />
         </View>
       </ImageBackground>
     </SafeAreaView>

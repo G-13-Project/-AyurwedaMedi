@@ -16,6 +16,18 @@ const Camera = () => {
             style={global.logoMini}
           />
           <Text style={global.headText}>Camera</Text>
+
+          {/*dumy data*/}
+          <Image
+            source={require('../assets/CamWindow.png')}
+            resizeMode="stretch"
+            style={global.camPageWindow}
+          />
+          <Image
+            source={require('../assets/camera.png')}
+            resizeMode="stretch"
+            style={global.camPageBtn}
+          />
         </View>
       </ImageBackground>
     </SafeAreaView>
