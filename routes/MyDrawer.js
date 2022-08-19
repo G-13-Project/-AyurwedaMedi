@@ -5,7 +5,7 @@ import {UserStack, LoginStack, RegStack, SettingStack} from './UserStack';
 // import {Image, TouchableOpacity} from 'react-native';
 // import {DrawerActions} from '@react-navigation/native';
 
-const MyDrawer = ({navigation}) => {
+const MyDrawer = () => {
   const Drawer = createDrawerNavigator();
   return (
     <Drawer.Navigator>
@@ -15,29 +15,31 @@ const MyDrawer = ({navigation}) => {
         options={{
           headerShown: false,
           drawerActiveBackgroundColor: 'lightgreen',
-          // headerLeft: (
-          //   <TouchableOpacity
-          //     onPress={() => {
-          //       navigation.openDrawer();
-          //     }}>
-          //     <Image source={require('../screens/assets/menu.png')}></Image>
-          //   </TouchableOpacity>
-          // ),
-        }}></Drawer.Screen>
+        }}
+      />
       <Drawer.Screen
         name="Login"
         component={LoginStack}
-        options={{headerShown: false}}
+        options={{
+          headerShown: false,
+          drawerActiveBackgroundColor: 'lightgreen',
+        }}
       />
       <Drawer.Screen
         name="Register"
         component={RegStack}
-        options={{headerShown: false}}
+        options={{
+          headerShown: false,
+          drawerActiveBackgroundColor: 'lightgreen',
+        }}
       />
       <Drawer.Screen
         name="Settings"
         component={SettingStack}
-        options={{headerShown: false}}
+        options={{
+          headerShown: false,
+          drawerActiveBackgroundColor: 'lightgreen',
+        }}
       />
     </Drawer.Navigator>
   );

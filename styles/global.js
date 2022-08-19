@@ -18,6 +18,13 @@ export const global = StyleSheet.create({
     color: 'black',
     fontWeight: 'bold',
   },
+  subHeadText: {
+    textAlign: 'center',
+    marginTop: 30,
+    fontSize: 20,
+    color: 'black',
+    fontWeight: 'bold',
+  },
   menuIcon: {
     height: 20,
     width: 20,

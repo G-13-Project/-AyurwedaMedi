@@ -17,7 +17,7 @@ const Home = ({navigation}) => {
         resizeMode="cover"
         style={global.bgImage}>
         <View style={global.header}>
-          <TouchableOpacity onPress={() => navigation.toggleDrawer()}>
+          <TouchableOpacity onPress={() => navigation.openDrawer()}>
             <Image
               source={require('../assets/menu.png')}
               resizeMode="stretch"
