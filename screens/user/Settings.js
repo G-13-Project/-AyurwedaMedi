@@ -15,7 +15,7 @@ const Settings = () => {
             resizeMode="stretch"
             style={global.logoMini}
           />
-          <Text style={global.titleText}>Ayurveda Medi APP</Text>
+          <Text style={global.headText}>Ayurveda Medi APP</Text>
         </View>
       </ImageBackground>
     </SafeAreaView>

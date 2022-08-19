@@ -35,7 +35,7 @@ const Login = ({navigation}) => {
             style={global.logoMini}
           />
 
-          <Text style={global.titleText}>Ayurveda Medi APP</Text>
+          <Text style={global.headText}>Ayurveda Medi APP</Text>
 
           <TextInput
             style={styles.inputMail}

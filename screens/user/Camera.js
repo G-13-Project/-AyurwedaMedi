@@ -11,11 +11,17 @@ const Camera = () => {
         style={global.bgImage}>
         <View style={global.header}>
           <Image
+            source={require('../assets/menu.png')}
+            resizeMode="stretch"
+            style={global.menuIcon}
+          />
+          <Image
             source={require('../assets/logoMini.png')}
             resizeMode="stretch"
             style={global.logoMini}
           />
-          <Text style={global.headText}>Camera</Text>
+          <Text style={global.headText}>Ayurveda Medi APP</Text>
+          <Text style={global.titleText}>Camera</Text>
 
           {/*dumy data*/}
           <Image

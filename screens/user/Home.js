@@ -1,8 +1,15 @@
 import React from 'react';
-import {View, Text, ImageBackground, SafeAreaView, Image} from 'react-native';
+import {
+  View,
+  Text,
+  ImageBackground,
+  SafeAreaView,
+  Image,
+  TouchableOpacity,
+} from 'react-native';
 import {global} from '../../styles/global';
 
-const Home = () => {
+const Home = ({navigation}) => {
   return (
     <SafeAreaView style={global.bgImage}>
       <ImageBackground
@@ -10,13 +17,20 @@ const Home = () => {
         resizeMode="cover"
         style={global.bgImage}>
         <View style={global.header}>
+          <TouchableOpacity onPress={() => navigation.toggleDrawer()}>
+            <Image
+              source={require('../assets/menu.png')}
+              resizeMode="stretch"
+              style={global.menuIcon}
+            />
+          </TouchableOpacity>
           <Image
             source={require('../assets/logoMini.png')}
             resizeMode="stretch"
             style={global.logoMini}
           />
-          <Text style={global.headText}>Pre-Medication</Text>
-
+          <Text style={global.headText}>Ayurveda Medi APP</Text>
+          <Text style={global.titleText}>Pre-Medication</Text>
           {/*dumy data*/}
           <Image
             source={require('../assets/preMedi.png')}
