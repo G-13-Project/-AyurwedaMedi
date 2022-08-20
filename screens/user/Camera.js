@@ -1,8 +1,8 @@
 import React from 'react';
-import {View, Text, SafeAreaView, ImageBackground, Image} from 'react-native';
+import { View, Text, SafeAreaView, ImageBackground, Image, TouchableOpacity } from "react-native";
 import {global} from '../../styles/global';
 
-const Camera = () => {
+const Camera = ({navigation}) => {
   return (
     <SafeAreaView style={global.bgImage}>
       <ImageBackground
@@ -10,11 +10,6 @@ const Camera = () => {
         resizeMode="cover"
         style={global.bgImage}>
         <View style={global.header}>
-          <Image
-            source={require('../../assets/menu.png')}
-            resizeMode="stretch"
-            style={global.menuIcon}
-          />
           <Image
             source={require('../../assets/logoMini.png')}
             resizeMode="stretch"
@@ -34,6 +29,14 @@ const Camera = () => {
             resizeMode="stretch"
             style={global.camPageBtn}
           />
+        </View>
+        <View>
+          <TouchableOpacity onPress={() => navigation.openDrawer()}>
+            <Image
+              source={require('../../assets/menu.png')}
+              style={global.menuIcon}
+            />
+          </TouchableOpacity>
         </View>
       </ImageBackground>
     </SafeAreaView>

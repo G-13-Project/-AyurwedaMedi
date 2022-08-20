@@ -26,11 +26,11 @@ export const global = StyleSheet.create({
     fontWeight: 'bold',
   },
   menuIcon: {
-    height: 20,
-    width: 20,
+    height: 30,
+    width: 30,
     resizeMode: 'contain',
-    marginLeft: '2%',
-    marginTop: 20,
+    marginLeft: 15,
+    marginTop: -45,
     position: 'absolute',
   },
   titleText: {

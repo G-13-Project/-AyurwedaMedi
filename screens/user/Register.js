@@ -8,8 +8,9 @@ import {
   TouchableOpacity,
   ScrollView,
   StyleSheet,
-  TextInput, Button,
-} from "react-native";
+  TextInput,
+  Button,
+} from 'react-native';
 import SelectList from 'react-native-dropdown-select-list/index';
 import {global} from '../../styles/global';
 
@@ -29,13 +30,6 @@ const Register = ({navigation}) => {
         style={global.bgImage}>
         {/*Header components*/}
         <View style={global.header}>
-          <TouchableOpacity onPress={() => navigation.openDrawer()}>
-            <Image
-              source={require('../../assets/menu.png')}
-              resizeMode="stretch"
-              style={global.menuIcon}
-            />
-          </TouchableOpacity>
           <Image
             source={require('../../assets/logoMini.png')}
             resizeMode="stretch"
@@ -43,6 +37,14 @@ const Register = ({navigation}) => {
           />
           <Text style={global.headText}>Ayurveda Medi APP</Text>
           <Text style={global.subHeadText}>Registration</Text>
+        </View>
+        <View>
+          <TouchableOpacity onPress={() => navigation.openDrawer()}>
+            <Image
+              source={require('../../assets/menu.png')}
+              style={global.menuIcon}
+            />
+          </TouchableOpacity>
         </View>
 
         {/*form content components*/}
@@ -75,68 +77,74 @@ const Register = ({navigation}) => {
             <TextInput
               placeholder="Moda Pawani"
               style={styles.textInput}
-              placeholderTextColor="#4db871"></TextInput>
+              placeholderTextColor="#4db871"
+            />
           </View>
-          <View style={styles.line}></View>
+          <View style={styles.line} />
 
           <View style={styles.form}>
             <Text style={styles.textLabel}>NIC : </Text>
             <TextInput
               placeholder="981234567V"
               style={styles.textInput}
-              placeholderTextColor="#4db871"></TextInput>
+              placeholderTextColor="#4db871"
+            />
           </View>
-          <View style={styles.line}></View>
+          <View style={styles.line} />
 
           <View style={styles.form}>
             <Text style={styles.textLabel}>District : </Text>
             <TextInput
               placeholder="Dakunu Rata"
               style={styles.textInput}
-              placeholderTextColor="#4db871"></TextInput>
+              placeholderTextColor="#4db871"
+            />
           </View>
-          <View style={styles.line}></View>
+          <View style={styles.line} />
 
           <View style={styles.form}>
             <Text style={styles.textLabel}>Contact No : </Text>
             <TextInput
               placeholder="0711234567"
               style={styles.textInput}
-              placeholderTextColor="#4db871"></TextInput>
+              placeholderTextColor="#4db871"
+            />
           </View>
-          <View style={styles.line}></View>
+          <View style={styles.line} />
 
           <View style={styles.form}>
             <Text style={styles.textLabel}>Email : </Text>
             <TextInput
               placeholder="modapawi98@gmail.com"
               style={styles.textInput}
-              placeholderTextColor="#4db871"></TextInput>
+              placeholderTextColor="#4db871"
+            />
           </View>
-          <View style={styles.line}></View>
+          <View style={styles.line} />
 
           <View style={styles.form}>
             <Text style={styles.textLabel}>Password : </Text>
             <TextInput
               placeholder="**********"
               style={styles.textInput}
-              placeholderTextColor="#4db871"></TextInput>
+              placeholderTextColor="#4db871"
+            />
           </View>
-          <View style={styles.line}></View>
+          <View style={styles.line} />
 
           <View style={styles.form}>
             <Text style={styles.textLabel}>Confirm Password : </Text>
             <TextInput
               placeholder="**********"
               style={styles.textInput}
-              placeholderTextColor="#4db871"></TextInput>
+              placeholderTextColor="#4db871"
+            />
           </View>
-          <View style={styles.line}></View>
+          <View style={styles.line} />
 
           <View style={styles.regBtn}>
             <Button title="Register" color="#47D50D" />
           </View>
-
         </ScrollView>
       </ImageBackground>
     </SafeAreaView>
