@@ -32,6 +32,7 @@ const Register = ({navigation}) => {
           <Text style={global.headText}>Ayurveda Medi APP</Text>
           <Text style={global.subHeadText}>Registration</Text>
         </View>
+
       </ImageBackground>
     </SafeAreaView>
   );

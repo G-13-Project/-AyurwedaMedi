@@ -13,15 +13,10 @@ import {
 import {global} from '../../styles/global';
 
 const Login = ({navigation}) => {
-  // for email text input
-  const [email, onChangeText] = React.useState('  johndoe@mail.com');
-  // for password input
-  const [password, onChangePass] = React.useState('  ********');
-
-  // for direct register page
-  const goToReg = () => {
-    navigation.navigate('Register');
-  };
+  // // for email text input
+  // const [email, onChangeText] = React.useState('  johndoe@mail.com');
+  // // for password input
+  // const [password, onChangePass] = React.useState('  ********');
 
   return (
     <SafeAreaView style={global.bgImage}>
@@ -47,13 +42,13 @@ const Login = ({navigation}) => {
           <Text style={global.subHeadText}>Log In</Text>
           <TextInput
             style={styles.inputMail}
-            onChangeText={onChangeText}
-            value={email}
+            placeholder="  Email"
+            placeholderTextColor="#47D50D"
           />
           <TextInput
             style={styles.inputPass}
-            onChangeText={onChangePass}
-            value={password}
+            placeholder="  Password"
+            placeholderTextColor="#47D50D"
           />
 
           <View style={styles.loginBtn}>
@@ -62,12 +57,14 @@ const Login = ({navigation}) => {
 
           <Text style={styles.textReg}>
             {' '}
-            ──────── Don't have Account? ────────
+            ──────── Don't have an Account? ────────
           </Text>
 
-          <View style={styles.regBtn}>
-            <Button title="Register" onPress={goToReg} color="#47D50D" />
-          </View>
+          <Text
+            style={styles.regBtn}
+            onPress={() => navigation.navigate('Register')}>
+            Register
+          </Text>
         </View>
       </ImageBackground>
     </SafeAreaView>
@@ -113,17 +110,13 @@ const styles = StyleSheet.create({
   textReg: {
     color: 'black',
     alignSelf: 'center',
-    fontWeight: 'bold',
     marginTop: 40,
   },
   regBtn: {
-    borderWidth: 1,
-    borderColor: '#47D50D',
-    overflow: 'hidden',
-    width: 150,
-    alignSelf: 'center',
-    borderRadius: 20,
     marginTop: 10,
+    alignSelf: 'center',
+    color: 'black',
+    fontWeight: 'bold',
   },
 });
 
