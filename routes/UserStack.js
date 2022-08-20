@@ -67,7 +67,7 @@ const UserStack = () => {
         options={{
           tabBarIcon: () => (
             <Image
-              source={require('../screens/assets/home.png')}
+              source={require('../assets/home.png')}
               style={global.tabIcons}
             />
           ),
@@ -81,7 +81,7 @@ const UserStack = () => {
         options={{
           tabBarIcon: () => (
             <Image
-              source={require('../screens/assets/camera.png')}
+              source={require('../assets/camera.png')}
               style={global.tabIcons}
             />
           ),
@@ -95,7 +95,7 @@ const UserStack = () => {
         options={{
           tabBarIcon: () => (
             <Image
-              source={require('../screens/assets/search.png')}
+              source={require('../assets/search.png')}
               style={global.tabIcons}
             />
           ),

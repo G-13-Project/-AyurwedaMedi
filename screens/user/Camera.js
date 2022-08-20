@@ -6,17 +6,17 @@ const Camera = () => {
   return (
     <SafeAreaView style={global.bgImage}>
       <ImageBackground
-        source={require('../assets/background.png')}
+        source={require('../../assets/background.png')}
         resizeMode="cover"
         style={global.bgImage}>
         <View style={global.header}>
           <Image
-            source={require('../assets/menu.png')}
+            source={require('../../assets/menu.png')}
             resizeMode="stretch"
             style={global.menuIcon}
           />
           <Image
-            source={require('../assets/logoMini.png')}
+            source={require('../../assets/logoMini.png')}
             resizeMode="stretch"
             style={global.logoMini}
           />
@@ -25,12 +25,12 @@ const Camera = () => {
 
           {/*dumy data*/}
           <Image
-            source={require('../assets/CamWindow.png')}
+            source={require('../../assets/CamWindow.png')}
             resizeMode="stretch"
             style={global.camPageWindow}
           />
           <Image
-            source={require('../assets/camera.png')}
+            source={require('../../assets/camera.png')}
             resizeMode="stretch"
             style={global.camPageBtn}
           />
