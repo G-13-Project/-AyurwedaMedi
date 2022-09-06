@@ -52,8 +52,8 @@ export const global = StyleSheet.create({
     marginRight: '5%',
   },
   tabIcons: {
-    width: 50,
-    height: 50,
+    width: 60,
+    height: 60,
     resizeMode: 'contain',
   },
   preMedi: {
