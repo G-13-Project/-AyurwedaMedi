@@ -58,7 +58,11 @@ const UserStack = () => {
       screenOptions={{
         headerShown: false,
         tabBarShowLabel: false,
-        tabBarStyle: {backgroundColor: 'transparent'},
+        tabBarStyle: {
+          backgroundColor: 'transparent',
+          elevation: 0,
+          position: 'absolute',
+        },
       }}>
       {/*tab navigation for Pre-medication page*/}
       <Tab.Screen

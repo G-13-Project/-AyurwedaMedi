@@ -3,6 +3,8 @@ import {StyleSheet, StatusBar, Platform} from 'react-native';
 export const global = StyleSheet.create({
   bgImage: {
     flex: 1,
+    resizeMode: 'stretch',
+    marginBottom: -30,
   },
   header: {
     paddingTop: Platform.OS === 'android' ? StatusBar.height : 0,
@@ -53,8 +55,6 @@ export const global = StyleSheet.create({
     width: 50,
     height: 50,
     resizeMode: 'contain',
-    backgroundColor: 'transparent',
-    elevation: 0,
   },
   preMedi: {
     alignSelf: 'center',
