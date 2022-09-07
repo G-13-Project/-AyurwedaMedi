@@ -145,6 +145,17 @@ const Register = ({navigation}) => {
           <View style={styles.regBtn}>
             <Button title="Register" color="#47D50D" />
           </View>
+
+          <Text style={styles.textlog}>
+            {' '}
+            ───── Already have an Account? ────
+          </Text>
+
+          <Text
+            style={styles.logBtn}
+            onPress={() => navigation.navigate('Login')}>
+            Login
+          </Text>
         </ScrollView>
       </ImageBackground>
     </SafeAreaView>
@@ -189,6 +200,18 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     overflow: 'hidden',
     marginTop: 20,
+  },
+  textlog: {
+    color: 'black',
+    alignSelf: 'center',
+    marginTop: 40,
+  },
+
+  logBtn: {
+    marginTop: 10,
+    alignSelf: 'center',
+    color: 'black',
+    fontWeight: 'bold',
   },
 });
 
