@@ -24,12 +24,6 @@ const Home = ({navigation}) => {
           />
           <Text style={global.headText}>Ayurveda Medi APP</Text>
           <Text style={global.titleText}>Pre-Medication</Text>
-          {/*dumy data*/}
-          <Image
-            source={require('../../assets/preMedi.png')}
-            resizeMode="stretch"
-            style={global.preMedi}
-          />
         </View>
         <View>
           <TouchableOpacity onPress={() => navigation.openDrawer()}>
