@@ -56,10 +56,10 @@ export const global = StyleSheet.create({
     height: 60,
     resizeMode: 'contain',
   },
-  // preMedi: {
-  //   alignSelf: 'center',
-  //   marginTop: 30,
-  // },
+  preMedi: {
+    alignSelf: 'center',
+    marginTop: 30,
+  },
   camPageWindow: {
     marginTop: 30,
     alignSelf: 'center',
