@@ -63,7 +63,7 @@ const Home = ({navigation}) => {
               bottom: 0,
               padding: 0,
               paddingLeft: -30,
-              paddingVertical: 5
+              paddingVertical: 5,
             }}
             ImageComponentStyle={{
               borderRadius: 15,
@@ -81,7 +81,7 @@ const styles = StyleSheet.create({
   slider: {
     paddingTop: 60,
     paddingLeft: 55,
-  }
-})
+  },
+});
 
 export default Home;
