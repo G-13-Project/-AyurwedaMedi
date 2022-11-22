@@ -73,9 +73,19 @@ const Register = ({navigation}) => {
           </View>
           {/*input fields for doctor registration*/}
           <View style={styles.form}>
-            <Text style={styles.textLabel}>Name :</Text>
+            <Text style={styles.textLabel}>First Name :</Text>
             <TextInput
-              placeholder="Moda Pawani"
+              placeholder=""
+              style={styles.textInput}
+              placeholderTextColor="#4db871"
+            />
+          </View>
+          <View style={styles.line} />
+
+          <View style={styles.form}>
+            <Text style={styles.textLabel}>Last Name : </Text>
+            <TextInput
+              placeholder=""
               style={styles.textInput}
               placeholderTextColor="#4db871"
             />
@@ -85,7 +95,7 @@ const Register = ({navigation}) => {
           <View style={styles.form}>
             <Text style={styles.textLabel}>NIC : </Text>
             <TextInput
-              placeholder="981234567V"
+              placeholder=""
               style={styles.textInput}
               placeholderTextColor="#4db871"
             />
@@ -95,7 +105,7 @@ const Register = ({navigation}) => {
           <View style={styles.form}>
             <Text style={styles.textLabel}>District : </Text>
             <TextInput
-              placeholder="Dakunu Rata"
+              placeholder=""
               style={styles.textInput}
               placeholderTextColor="#4db871"
             />
@@ -105,7 +115,7 @@ const Register = ({navigation}) => {
           <View style={styles.form}>
             <Text style={styles.textLabel}>Contact No : </Text>
             <TextInput
-              placeholder="0711234567"
+              placeholder=""
               style={styles.textInput}
               placeholderTextColor="#4db871"
             />
@@ -115,7 +125,17 @@ const Register = ({navigation}) => {
           <View style={styles.form}>
             <Text style={styles.textLabel}>Email : </Text>
             <TextInput
-              placeholder="modapawi98@gmail.com"
+              placeholder=""
+              style={styles.textInput}
+              placeholderTextColor="#4db871"
+            />
+          </View>
+          <View style={styles.line} />
+
+          <View style={styles.form}>
+            <Text style={styles.textLabel}>SLME NO : </Text>
+            <TextInput
+              placeholder=""
               style={styles.textInput}
               placeholderTextColor="#4db871"
             />
@@ -125,7 +145,8 @@ const Register = ({navigation}) => {
           <View style={styles.form}>
             <Text style={styles.textLabel}>Password : </Text>
             <TextInput
-              placeholder="**********"
+              placeholder=""
+              secureTextEntry={true}
               style={styles.textInput}
               placeholderTextColor="#4db871"
             />
@@ -135,7 +156,8 @@ const Register = ({navigation}) => {
           <View style={styles.form}>
             <Text style={styles.textLabel}>Confirm Password : </Text>
             <TextInput
-              placeholder="**********"
+              placeholder=""
+              secureTextEntry={true}
               style={styles.textInput}
               placeholderTextColor="#4db871"
             />
