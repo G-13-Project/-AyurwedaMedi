@@ -163,21 +163,22 @@ const Register = ({navigation}) => {
             />
           </View>
           <View style={styles.line} />
-
           <View style={styles.regBtn}>
             <Button title="Register" color="#47D50D" />
           </View>
-
           <Text style={styles.textlog}>
             {' '}
             ───── Already have an Account? ────
           </Text>
-
           <Text
             style={styles.logBtn}
             onPress={() => navigation.navigate('Login')}>
             Login
           </Text>
+          <Text>""</Text>
+          <Text>""</Text>
+          <Text>""</Text>
+          <Text>""</Text>
         </ScrollView>
       </ImageBackground>
     </SafeAreaView>
