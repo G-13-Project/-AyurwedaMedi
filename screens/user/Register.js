@@ -17,11 +17,86 @@ import {global} from '../../styles/global';
 const Register = ({navigation}) => {
   // for dropdown menu selection
   const [Selected, setSelected] = React.useState('');
+
+  const [fname, setFname] = React.useState('');
+  const [lname, setLname] = React.useState('');
+  const [contact_no, setContact] = React.useState('');
+  const [nic, setNic] = React.useState('');
+  const [district, setDistrict] = React.useState('');
+  const [email, setEmail] = React.useState('');
+  const [slme_no, setSlme] = React.useState('');
+  const [address, setAdress] = React.useState('');
+  const [password, setPassword] = React.useState('');
+  const [confmPassword, setConfmPassword] = React.useState('');
+
   const data = [
     {key: '1', value: 'Doctor'},
-    {key: '2', value: 'Seller'},
+    {key: '2', value: 'Dealer'},
     {key: '3', value: 'Researcher'},
   ];
+
+  console.log(Selected);
+
+  const handleReg = async () => {
+    console.log(Selected);
+    let Regtitle;
+
+    if (Selected === '1') {
+      Regtitle = 'doctor';
+    }
+    if (Selected === '2') {
+      Regtitle = 'dealer';
+    }
+    if (Selected === '3') {
+      Regtitle = 'researcher';
+    }
+    console.log(
+      Regtitle,
+      fname,
+      lname,
+      contact_no,
+      nic,
+      district,
+      email,
+      slme_no,
+      address,
+      password,
+    );
+
+    const response = await fetch(
+      'https://nice-red-bunny-gown.cyclic.app/api/users/register',
+      {
+        method: 'POST',
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          title: Regtitle,
+          fname,
+          lname,
+          contact_no,
+          nic,
+          district,
+          email,
+          slme_no,
+          address,
+          password,
+        }),
+      },
+    );
+    console.log(response.status);
+    if (response.status === 200) {
+      navigation.navigate('Login');
+    } else if (response.status === 400) {
+      // eslint-disable-next-line no-alert
+      alert('Unsuccessful');
+    } else {
+      // eslint-disable-next-line no-alert
+      alert('Bad Info');
+    }
+  };
+
   return (
     <SafeAreaView style={global.bgImage}>
       <ImageBackground
@@ -53,7 +128,8 @@ const Register = ({navigation}) => {
             {/*dropdown content*/}
             <SelectList
               data={data}
-              setSelected={setSelected}
+              setSelected={Selected => setSelected(Selected)}
+              save="value"
               placeholder="Register As"
               boxStyles={{
                 backgroundColor: '#ffffff',
@@ -76,6 +152,9 @@ const Register = ({navigation}) => {
             <Text style={styles.textLabel}>First Name :</Text>
             <TextInput
               placeholder=""
+              onChangeText={value => setFname(value)}
+              value={fname}
+              defaultValue={fname}
               style={styles.textInput}
               placeholderTextColor="#4db871"
             />
@@ -86,26 +165,9 @@ const Register = ({navigation}) => {
             <Text style={styles.textLabel}>Last Name : </Text>
             <TextInput
               placeholder=""
-              style={styles.textInput}
-              placeholderTextColor="#4db871"
-            />
-          </View>
-          <View style={styles.line} />
-
-          <View style={styles.form}>
-            <Text style={styles.textLabel}>NIC : </Text>
-            <TextInput
-              placeholder=""
-              style={styles.textInput}
-              placeholderTextColor="#4db871"
-            />
-          </View>
-          <View style={styles.line} />
-
-          <View style={styles.form}>
-            <Text style={styles.textLabel}>District : </Text>
-            <TextInput
-              placeholder=""
+              onChangeText={value => setLname(value)}
+              value={lname}
+              defaultValue={lname}
               style={styles.textInput}
               placeholderTextColor="#4db871"
             />
@@ -116,6 +178,35 @@ const Register = ({navigation}) => {
             <Text style={styles.textLabel}>Contact No : </Text>
             <TextInput
               placeholder=""
+              onChangeText={value => setContact(value)}
+              value={contact_no}
+              defaultValue={contact_no}
+              style={styles.textInput}
+              placeholderTextColor="#4db871"
+            />
+          </View>
+          <View style={styles.line} />
+
+          <View style={styles.form}>
+            <Text style={styles.textLabel}>NIC : </Text>
+            <TextInput
+              placeholder=""
+              onChangeText={value => setNic(value)}
+              value={nic}
+              defaultValue={nic}
+              style={styles.textInput}
+              placeholderTextColor="#4db871"
+            />
+          </View>
+          <View style={styles.line} />
+
+          <View style={styles.form}>
+            <Text style={styles.textLabel}>District : </Text>
+            <TextInput
+              placeholder=""
+              onChangeText={value => setDistrict(value)}
+              value={district}
+              defaultValue={district}
               style={styles.textInput}
               placeholderTextColor="#4db871"
             />
@@ -126,6 +217,9 @@ const Register = ({navigation}) => {
             <Text style={styles.textLabel}>Email : </Text>
             <TextInput
               placeholder=""
+              onChangeText={value => setEmail(value)}
+              value={email}
+              defaultValue={email}
               style={styles.textInput}
               placeholderTextColor="#4db871"
             />
@@ -136,6 +230,22 @@ const Register = ({navigation}) => {
             <Text style={styles.textLabel}>SLME NO : </Text>
             <TextInput
               placeholder=""
+              onChangeText={value => setSlme(value)}
+              value={slme_no}
+              defaultValue={slme_no}
+              style={styles.textInput}
+              placeholderTextColor="#4db871"
+            />
+          </View>
+          <View style={styles.line} />
+
+          <View style={styles.form}>
+            <Text style={styles.textLabel}>Address : </Text>
+            <TextInput
+              placeholder=""
+              onChangeText={value => setAdress(value)}
+              value={address}
+              defaultValue={address}
               style={styles.textInput}
               placeholderTextColor="#4db871"
             />
@@ -146,6 +256,9 @@ const Register = ({navigation}) => {
             <Text style={styles.textLabel}>Password : </Text>
             <TextInput
               placeholder=""
+              onChangeText={value => setPassword(value)}
+              value={password}
+              defaultValue={password}
               secureTextEntry={true}
               style={styles.textInput}
               placeholderTextColor="#4db871"
@@ -157,6 +270,9 @@ const Register = ({navigation}) => {
             <Text style={styles.textLabel}>Confirm Password : </Text>
             <TextInput
               placeholder=""
+              onChangeText={value => setConfmPassword(value)}
+              value={confmPassword}
+              defaultValue={confmPassword}
               secureTextEntry={true}
               style={styles.textInput}
               placeholderTextColor="#4db871"
@@ -164,7 +280,7 @@ const Register = ({navigation}) => {
           </View>
           <View style={styles.line} />
           <View style={styles.regBtn}>
-            <Button title="Register" color="#47D50D" />
+            <Button title="Register" color="#47D50D" onPress={handleReg} />
           </View>
           <Text style={styles.textlog}>
             {' '}

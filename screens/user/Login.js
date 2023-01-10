@@ -18,20 +18,23 @@ const Login = ({navigation}) => {
   // for password input
   const [password, setPassword] = React.useState('');
 
-  const handleLogin = () => {
-    fetch('https://nice-red-bunny-gown.cyclic.app/api/users/login', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
+  const handleLogin = async () => {
+    let title;
+    const response = await fetch(
+      'https://nice-red-bunny-gown.cyclic.app/api/users/login',
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({email, password}),
       },
-      body: JSON.stringify({email, password}),
-    })
+    )
       .then(res => res.json())
       .then(data => {
         console.log(data.title);
         // navigate doctor page
         if (data.title === 'doctor ') {
-          console.log(data);
           navigation.navigate('DochomeStack', {
             screen: 'Dochome',
             params: {},
@@ -41,6 +44,13 @@ const Login = ({navigation}) => {
       .catch(error => {
         console.log(error);
       });
+    // console.log('Title: ', response.title);
+    // if (response.title === 'doctor ') {
+    //   navigation.navigate('DochomeStack', {
+    //     screen: 'Dochome',
+    //     params: {},
+    //   });
+    // }
   };
 
   return (
@@ -72,6 +82,7 @@ const Login = ({navigation}) => {
             onChangeText={value => setPassword(value)}
             value={password}
             defaultValue={password}
+            secureTextEntry={true}
             placeholderTextColor="#47D50D"
           />
 
