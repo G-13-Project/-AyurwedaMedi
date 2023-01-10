@@ -11,6 +11,7 @@ import Settings from '../screens/user/Settings';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {Image} from 'react-native';
 import {global} from '../styles/global';
+import DocHome from '../screens/doctor/DocHome';
 
 // for stack navigation
 const Stack = createNativeStackNavigator();
@@ -45,6 +46,15 @@ const SettingStack = () => {
   );
 };
 
+// stack for DocHome.js
+const DochomeStack = () => {
+  return (
+    <Stack.Navigator screenOptions={{headerShown: false}}>
+      <Stack.Screen name="Dochome" component={DocHome} />
+    </Stack.Navigator>
+  );
+};
+
 // stack for main screen connect with other function screens
 const UserStack = () => {
   // auto hide splash screen
@@ -53,7 +63,7 @@ const UserStack = () => {
   }, []);
 
   return (
-    // navigations
+    // bottom navigations
     <Tab.Navigator
       screenOptions={{
         headerShown: false,
@@ -109,4 +119,4 @@ const UserStack = () => {
   );
 };
 
-export {UserStack, LoginStack, RegStack, SettingStack};
+export {UserStack, LoginStack, RegStack, SettingStack, DochomeStack};
