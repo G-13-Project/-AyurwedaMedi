@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {
   View,
   Text,
@@ -29,8 +29,13 @@ const Login = ({navigation}) => {
       .then(res => res.json())
       .then(data => {
         console.log(data.title);
+        // navigate doctor page
         if (data.title === 'doctor ') {
-          navigation.navigate('Register');
+          console.log(data);
+          navigation.navigate('DochomeStack', {
+            screen: 'Dochome',
+            params: {},
+          });
         }
       })
       .catch(error => {
