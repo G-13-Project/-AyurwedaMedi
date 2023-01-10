@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {
   View,
   Text,
@@ -13,10 +13,30 @@ import {
 import {global} from '../../styles/global';
 
 const Login = ({navigation}) => {
-  // // for email text input
-  // const [email, onChangeText] = React.useState('  johndoe@mail.com');
-  // // for password input
-  // const [password, onChangePass] = React.useState('  ********');
+  // for email text input
+  const [email, setEmail] = React.useState('');
+  // for password input
+  const [password, setPassword] = React.useState('');
+
+  const handleLogin = () => {
+    fetch('https://nice-red-bunny-gown.cyclic.app/api/users/login', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({email, password}),
+    })
+      .then(res => res.json())
+      .then(data => {
+        console.log(data.title);
+        if (data.title === 'doctor ') {
+          navigation.navigate('Register');
+        }
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  };
 
   return (
     <SafeAreaView style={global.bgImage}>
@@ -36,16 +56,22 @@ const Login = ({navigation}) => {
           <TextInput
             style={styles.inputMail}
             placeholder="  Email"
+            onChangeText={value => setEmail(value)}
+            value={email}
+            defaultValue={email}
             placeholderTextColor="#47D50D"
           />
           <TextInput
             style={styles.inputPass}
             placeholder="  Password"
+            onChangeText={value => setPassword(value)}
+            value={password}
+            defaultValue={password}
             placeholderTextColor="#47D50D"
           />
 
           <View style={styles.loginBtn}>
-            <Button title="LOGIN" color="#47D50D" />
+            <Button title="LOGIN" color="#47D50D" onPress={handleLogin} />
           </View>
 
           <Text style={styles.textReg}>

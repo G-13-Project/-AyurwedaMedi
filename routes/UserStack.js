@@ -8,6 +8,7 @@ import SearchDoc from '../screens/user/SearchDoc';
 import Login from '../screens/user/Login';
 import Register from '../screens/user/Register';
 import Settings from '../screens/user/Settings';
+import DocHome from '../screens/doctor/DocHome';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {Image} from 'react-native';
 import {global} from '../styles/global';
@@ -41,6 +42,15 @@ const SettingStack = () => {
   return (
     <Stack.Navigator screenOptions={{headerShown: false}}>
       <Stack.Screen name="Setting" component={Settings} />
+    </Stack.Navigator>
+  );
+};
+
+// stack for Doctor home page
+const DocHomeStack = () => {
+  return (
+    <Stack.Navigator screenOptions={{headerShown: false}}>
+      <Stack.Screen name="DocHome" component={DocHome} />
     </Stack.Navigator>
   );
 };
@@ -109,4 +119,4 @@ const UserStack = () => {
   );
 };
 
-export {UserStack, LoginStack, RegStack, SettingStack};
+export {UserStack, LoginStack, RegStack, SettingStack, DocHomeStack};
