@@ -46,14 +46,14 @@ const SettingStack = () => {
   );
 };
 
-// stack for DocHome.js
-const DochomeStack = () => {
-  return (
-    <Stack.Navigator screenOptions={{headerShown: false}}>
-      <Stack.Screen name="Dochome" component={DocHome} />
-    </Stack.Navigator>
-  );
-};
+//stack for DocHome.js
+// const DochomeStack = () => {
+//   return (
+//     <Stack.Navigator screenOptions={{headerShown: false}}>
+//       <Stack.Screen name="Dochome" component={DocHome} />
+//     </Stack.Navigator>
+//   );
+// };
 
 // stack for main screen connect with other function screens
 const UserStack = () => {
@@ -119,4 +119,4 @@ const UserStack = () => {
   );
 };
 
-export {UserStack, LoginStack, RegStack, SettingStack, DochomeStack};
+export {UserStack, LoginStack, RegStack, SettingStack};

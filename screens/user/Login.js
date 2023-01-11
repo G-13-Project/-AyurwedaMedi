@@ -18,23 +18,36 @@ const Login = ({navigation}) => {
   // for password input
   const [password, setPassword] = React.useState('');
 
-  const handleLogin = () => {
-    fetch('https://nice-red-bunny-gown.cyclic.app/api/users/login', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
+  const handleLogin = async () => {
+    const response = await fetch(
+      'https://nice-red-bunny-gown.cyclic.app/api/users/login',
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({email, password}),
       },
-      body: JSON.stringify({email, password}),
-    })
+    )
       .then(res => res.json())
       .then(data => {
-        console.log(data.title);
         // navigate doctor page
-        if (data.title === 'doctor ') {
-          console.log(data);
+        if (data.title.toString() === 'doctor') {
+          alert('Logged as a Doctor');
           navigation.navigate('DochomeStack', {
-            screen: 'Dochome',
-            params: {},
+            screen: 'DocHome',
+          });
+        }
+        if (data.title.toString() === 'dealer') {
+          alert('Logged as a Dealer');
+          navigation.navigate('DochomeStack', {
+            screen: 'DocHome',
+          });
+        }
+        if (data.title.toString() === 'researcher') {
+          alert('Logged as a Researcher');
+          navigation.navigate('DochomeStack', {
+            screen: 'DocHome',
           });
         }
       })
@@ -72,6 +85,7 @@ const Login = ({navigation}) => {
             onChangeText={value => setPassword(value)}
             value={password}
             defaultValue={password}
+            secureTextEntry={true}
             placeholderTextColor="#47D50D"
           />
 
