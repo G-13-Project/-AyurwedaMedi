@@ -3,7 +3,7 @@ import React, {useEffect} from 'react';
 import SplashScreen from 'react-native-splash-screen';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import Home from '../screens/user/Home';
-import Camera from '../screens/user/Camera';
+import CameraScreen from '../screens/user/Camera';
 import SearchDoc from '../screens/user/SearchDoc';
 import Login from '../screens/user/Login';
 import Register from '../screens/user/Register';
@@ -91,7 +91,7 @@ const UserStack = () => {
       {/*tab navigation for camera page*/}
       <Tab.Screen
         name="Camera"
-        component={Camera}
+        component={CameraScreen}
         options={{
           tabBarIcon: () => (
             <Image

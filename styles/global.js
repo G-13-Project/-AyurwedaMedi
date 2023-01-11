@@ -69,6 +69,7 @@ export const global = StyleSheet.create({
   camPageBtn: {
     marginTop: 20,
     alignSelf: 'center',
+    position: 'relative',
   },
   docPageImg: {
     marginTop: 50,
