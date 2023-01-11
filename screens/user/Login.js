@@ -19,7 +19,6 @@ const Login = ({navigation}) => {
   const [password, setPassword] = React.useState('');
 
   const handleLogin = async () => {
-    let title;
     const response = await fetch(
       'https://nice-red-bunny-gown.cyclic.app/api/users/login',
       {
@@ -32,25 +31,29 @@ const Login = ({navigation}) => {
     )
       .then(res => res.json())
       .then(data => {
-        console.log(data.title);
         // navigate doctor page
-        if (data.title === 'doctor ') {
+        if (data.title.toString() === 'doctor') {
+          alert('Logged as a Doctor');
           navigation.navigate('DochomeStack', {
-            screen: 'Dochome',
-            params: {},
+            screen: 'DocHome',
+          });
+        }
+        if (data.title.toString() === 'dealer') {
+          alert('Logged as a Dealer');
+          navigation.navigate('DochomeStack', {
+            screen: 'DocHome',
+          });
+        }
+        if (data.title.toString() === 'researcher') {
+          alert('Logged as a Researcher');
+          navigation.navigate('DochomeStack', {
+            screen: 'DocHome',
           });
         }
       })
       .catch(error => {
         console.log(error);
       });
-    // console.log('Title: ', response.title);
-    // if (response.title === 'doctor ') {
-    //   navigation.navigate('DochomeStack', {
-    //     screen: 'Dochome',
-    //     params: {},
-    //   });
-    // }
   };
 
   return (

@@ -50,6 +50,42 @@ const Register = ({navigation}) => {
     if (Selected === '3') {
       Regtitle = 'researcher';
     }
+    if (password.toString() === confmPassword.toString()) {
+      const response = await fetch(
+        'https://nice-red-bunny-gown.cyclic.app/api/users/register',
+        {
+          method: 'POST',
+          headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            title: Regtitle,
+            fname,
+            lname,
+            contact_no,
+            nic,
+            district,
+            email,
+            slme_no,
+            address,
+            password,
+          }),
+        },
+      );
+      console.log(response.status);
+      if (response.status === 200) {
+        navigation.navigate('Login');
+      } else if (response.status === 400) {
+        // eslint-disable-next-line no-alert
+        alert('Unsuccessful');
+      } else {
+        // eslint-disable-next-line no-alert
+        alert('Bad Info');
+      }
+    } else {
+      alert('Password Not Match');
+    }
     console.log(
       Regtitle,
       fname,
@@ -62,39 +98,6 @@ const Register = ({navigation}) => {
       address,
       password,
     );
-
-    const response = await fetch(
-      'https://nice-red-bunny-gown.cyclic.app/api/users/register',
-      {
-        method: 'POST',
-        headers: {
-          Accept: 'application/json',
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          title: Regtitle,
-          fname,
-          lname,
-          contact_no,
-          nic,
-          district,
-          email,
-          slme_no,
-          address,
-          password,
-        }),
-      },
-    );
-    console.log(response.status);
-    if (response.status === 200) {
-      navigation.navigate('Login');
-    } else if (response.status === 400) {
-      // eslint-disable-next-line no-alert
-      alert('Unsuccessful');
-    } else {
-      // eslint-disable-next-line no-alert
-      alert('Bad Info');
-    }
   };
 
   return (
