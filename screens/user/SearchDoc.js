@@ -17,6 +17,7 @@ const SearchDoc = ({navigation}) => {
           />
           <Text style={global.headText}>Ayurveda Medi APP</Text>
           <Text style={global.titleText}>Doctors</Text>
+
           <Image
             source={require('../../assets/DocInfo.png')}
             resizeMode="stretch"
@@ -27,14 +28,16 @@ const SearchDoc = ({navigation}) => {
           <Image
             source={require('../../assets/DocInfo.png')}
             resizeMode="stretch"
-            style={global.preMedi}
+            style={global.docPageImg}
           />
           <Image
             source={require('../../assets/DocInfo.png')}
             resizeMode="stretch"
-            style={global.preMedi}
+            style={global.docPageImg}
           />
+          {/*dumy data end*/}
         </View>
+
         <View>
           <TouchableOpacity onPress={() => navigation.openDrawer()}>
             <Image
