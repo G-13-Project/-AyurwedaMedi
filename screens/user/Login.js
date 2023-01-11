@@ -34,9 +34,7 @@ const Login = ({navigation}) => {
         // navigate doctor page
         if (data.title.toString() === 'doctor') {
           alert('Logged as a Doctor');
-          navigation.navigate('DochomeStack', {
-            screen: 'DocHome',
-          });
+          navigation.navigate('Setting');
         }
         if (data.title.toString() === 'dealer') {
           alert('Logged as a Dealer');
